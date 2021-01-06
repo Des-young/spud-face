@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     let donorStatus = document.querySelector('#donor-status');
 
     let submit = document.querySelector('button');
-
+    let count = 0;
 
   // ** Phase 1B: Update license with event delegation and event.target **
 
@@ -38,6 +38,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   let cardStatus = document.querySelector('#card-donor-status');
   cardStatus.innerText = "COME BACK TO THIS LATER"
+
+
+  if(donorStatus.checked){
+      cardStatus.innerText = "Yes"
+  } else{
+     cardStatus.innerText = "No"
+  }
+
+  count++;
+  submit.innerHTML = `Submitted ${count} times.`
   });
 
   // ** Phase 2: Add focus and blur events to form inputs **
@@ -71,7 +81,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // ** Phase 4: Update submit button click count **
   // })
-
+  // let count = 0;
+  // submit.addEventListener('click', event => {
+  //   event.preventDefault();
+  //   count++;
+  //   submit.innerHTML = `Submitted ${count} times.`
+  // })
 
 
 
