@@ -50,21 +50,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   licenseForm.addEventListener("blur", (event) => {
 
-      if(event.target === licenseConfirm){
-        if(licenseNum.value !== licenseConfirm.value){
-        licenseNum.stlye.backgroundColor = 'lightcoral';
-        licenseConfirm.style.backgroundColor = 'lightcoral';
-        }
-      } else {
+      // if(event.target === licenseConfirm){
+      //   if(licenseNum.value !== licenseConfirm.value){
+      //   licenseNum.stlye.backgroundColor = 'lightcoral';
+      //   licenseConfirm.style.backgroundColor = 'lightcoral';
+      //   }
+      // } else {
       event.target.style.backgroundColor = "";
-      }
+      // }
   }, true);
 
   // ** Phase 3: Check that license numbers match **
 
   licenseConfirm.addEventListener('blur', (event) => {
     if(licenseNum.value !== licenseConfirm.value){
-        licenseNum.stlye.backgroundColor = 'lightcoral';
+        licenseNum.style.backgroundColor = 'lightcoral';
         licenseConfirm.style.backgroundColor = 'lightcoral';
     }
   }, true);
