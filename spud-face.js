@@ -10,10 +10,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     let donorStatus = document.querySelector('#donor-status');
 
-    let submit = document.querySelector('#button');
+    let submit = document.querySelector('button');
 
 
   // ** Phase 1B: Update license with event delegation and event.target **
+
+
+
+  submit.addEventListener('click', (event) => {
+    // event.preventDefault();
+
 
   let licenseTitle = document.querySelector('#card-title');
   licenseTitle.innerText = title.value;
@@ -35,27 +41,32 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   let cardStatus = document.querySelector('#card-donor-status');
   cardStatus.innerText = "COME BACK TO THIS LATER"
-
+  });
 
   // ** Phase 2: Add focus and blur events to form inputs **
 
   let licenseForm = document.getElementById('drivers-license-form'); // storing the form section as a variable
 
   licenseForm.addEventListener("focus", (event) => {
-      event.target.style.backgroundColor = "lightgreen";
-  }, true);
+    event.target.style.backgroundColor = "lightgreen";
+}, true);
 
-  licenseForm.addEventListener("blur", (event) => {
-      event.target.style.backgroundColor = "";
-  }, true);
+licenseForm.addEventListener("blur", (event) => {
+    event.target.style.backgroundColor = "";
+}, true);
 
   // ** Phase 3: Check that license numbers match **
 
   if(licenseNum.value !== licenseConfirm.value){
-
+      licenseNum.stlye.backgroundColor = 'lightcoral';
+      licenseConfirm.style.backgroundColor = 'lightcoral';
   }
 
   // ** Phase 4: Update submit button click count **
+  // })
+
+
+ 
 
 
 });
