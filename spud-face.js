@@ -15,11 +15,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // ** Phase 1B: Update license with event delegation and event.target **
 
-
-
   submit.addEventListener('click', (event) => {
-    // event.preventDefault();
-
+    event.preventDefault();
 
   let licenseTitle = document.querySelector('#card-title');
   licenseTitle.innerText = title.value;
@@ -51,22 +48,32 @@ window.addEventListener("DOMContentLoaded", (event) => {
     event.target.style.backgroundColor = "lightgreen";
 }, true);
 
-licenseForm.addEventListener("blur", (event) => {
-    event.target.style.backgroundColor = "";
-}, true);
+  licenseForm.addEventListener("blur", (event) => {
+
+      if(event.target === licenseConfirm){
+        if(licenseNum.value !== licenseConfirm.value){
+        licenseNum.stlye.backgroundColor = 'lightcoral';
+        licenseConfirm.style.backgroundColor = 'lightcoral';
+        }
+      } else {
+      event.target.style.backgroundColor = "";
+      }
+  }, true);
 
   // ** Phase 3: Check that license numbers match **
 
-  if(licenseNum.value !== licenseConfirm.value){
-      licenseNum.stlye.backgroundColor = 'lightcoral';
-      licenseConfirm.style.backgroundColor = 'lightcoral';
-  }
+  licenseConfirm.addEventListener('blur', (event) => {
+    if(licenseNum.value !== licenseConfirm.value){
+        licenseNum.stlye.backgroundColor = 'lightcoral';
+        licenseConfirm.style.backgroundColor = 'lightcoral';
+    }
+  }, true);
 
   // ** Phase 4: Update submit button click count **
   // })
 
 
- 
+
 
 
 });
